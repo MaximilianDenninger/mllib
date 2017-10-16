@@ -1,6 +1,6 @@
 from .datastructure import DataStructure
-from .converter import *
-from . import utilities
+from . import converter
+from .import utilities
 
 
 class Data(object):
@@ -46,9 +46,9 @@ class Data(object):
                     self._y = self._y.transpose()
                 else:
                     if DataStructure.is_combined(self._data_type):
-                        result = convert_data_for_combined(self._x, self._data_type, type, self._len_of_x)
+                        result = converter.convert_data_for_combined(self._x, self._data_type, type, self._len_of_x)
                     else:
-                        result = convert_data_for_separated(self._x, self._y, self._data_type, type, self._len_of_x)
+                        result = converter.convert_data_for_separated(self._x, self._y, self._data_type, type, self._len_of_x)
                     if DataStructure.is_combined(type):
                         self._x = result
                     else:
@@ -60,21 +60,21 @@ class Data(object):
             return self._x
         else:
             new_type = DataStructure.switch_combine_separate(self._data_type)
-            return convert_data_for_combined(self._x, self._data_type, new_type, self._len_of_x)[0]
+            return converter.convert_data_for_combined(self._x, self._data_type, new_type, self._len_of_x)[0]
 
     def get_y(self):
         if DataStructure.is_separated(self._data_type):
             return self._y
         else:
             new_type = DataStructure.switch_combine_separate(self._data_type)
-            return convert_data_for_combined(self._x, self._data_type, new_type, self._len_of_x)[1]
+            return converter.convert_data_for_combined(self._x, self._data_type, new_type, self._len_of_x)[1]
 
     def get_data(self):
         if DataStructure.is_combined(self._data_type):
             return self._x
         else:
             new_type = DataStructure.switch_combine_separate(self._data_type)
-            return convert_data_for_separated(self._x, self._y, self._data_type, new_type, self._len_of_x)
+            return converter.convert_data_for_separated(self._x, self._y, self._data_type, new_type, self._len_of_x)
 
     def has_class(self):
         return self._has_class

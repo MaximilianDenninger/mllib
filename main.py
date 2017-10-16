@@ -12,3 +12,5 @@ sepReader.set_style("x,x", "c")
 data = sepReader.get_data()
 Visu.plot(data)
 
+
+

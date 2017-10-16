@@ -1,6 +1,6 @@
 import numpy as np
 from .datastructure import DataStructure
-import utilities
+from . import utilities
 
 
 def convert_data_for_combined(data, current_type, desired_type, len_of_x):
