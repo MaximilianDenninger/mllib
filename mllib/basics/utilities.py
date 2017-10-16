@@ -25,3 +25,7 @@ def remove_comments_and_empty_lines(text):
             else:
                 new_text += "\n" + line
     return new_text
+
+
+def get_path_of_main_file():
+    return os.path.dirname(os.path.realpath(__file__))
