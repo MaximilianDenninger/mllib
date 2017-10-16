@@ -29,12 +29,12 @@ class Data(object):
             else:
                 self._dimForY = 1
         else:
-            utilities.printError("No points were provided!")
+            utilities.print_error("No points were provided!")
         self._has_class = has_class
         if DataStructure.is_valid(data_type):
             self._data_type = data_type
         else:
-            utilities.printError("This type is unknown!")
+            utilities.print_error("This type is unknown!")
 
     def switch_type(self, type):
         if DataStructure.is_valid(type):

@@ -28,9 +28,9 @@ class Style(object):
                 self._hasClass = True
                 self._type.append(self._ctype)
             else:
-                utilities.printError('This type is unknown!')
+                utilities.print_error('This type is unknown!')
         if self._hasClass and self._numberOfDimForReg > 0:
-            utilities.printError("It can not be regression and classification at the same time!")
+            utilities.print_error("It can not be regression and classification at the same time!")
 
     def has_class(self):
         return self._hasClass
@@ -52,7 +52,7 @@ class Style(object):
             elif type == self._ctype:
                 y = int(ele)
             else:
-                utilities.printError('This type is unknown!')
+                utilities.print_error('This type is unknown!')
         return x, y
 
 
@@ -69,7 +69,7 @@ class BasicReader(object):
                 self._text = utilities.remove_comments_and_empty_lines(self._text)
                 self._lines = self._text.split("\n")
         else:
-            utilities.printError("This file is unknown!")
+            utilities.print_error("This file is unknown!")
             exit(1)
 
     def set_style(self, style):

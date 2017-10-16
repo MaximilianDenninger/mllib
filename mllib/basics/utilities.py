@@ -1,5 +1,6 @@
-def printError(message):
+def print_error(message):
     print("An error occured: " + message)
+
 
 def remove_white_chars(line):
     line = line.replace('\t', '')
@@ -7,6 +8,7 @@ def remove_white_chars(line):
     line = line.replace('\n', '')
     line = line.replace('\r', '')
     return line
+
 
 def remove_comments_and_empty_lines(text):
     new_text = ''

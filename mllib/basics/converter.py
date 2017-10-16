@@ -20,14 +20,14 @@ def convert_data_for_combined(data, current_type, desired_type, len_of_x):
                 return convert_data_for_separated(temp_split[0], temp_split[1], switched_type, desired_type,
                                                   len_of_x)  # transpose it
     else:
-        utilities.printError("This type is unknown!")
+        utilities.print_error("This type is unknown!")
         return None
 
 
 def convert_data_for_separated(data, labels, current_type, desired_type, len_of_x):
     same_dim = 1 if DataStructure.is_row(current_type) else 0
     if data.shape[same_dim] != labels.shape[same_dim]:
-        utilities.printError("The labels and data don't have the same amount!")
+        utilities.print_error("The labels and data don't have the same amount!")
     if current_type == desired_type:
         return data
     if DataStructure.is_valid(desired_type) and DataStructure.is_separated(current_type):
@@ -50,5 +50,5 @@ def convert_data_for_separated(data, labels, current_type, desired_type, len_of_
                                                            len_of_x)  # combine data
                 return convert_data_for_combined(temp_combined, switched_type, desired_type, len_of_x)  # transpose it
     else:
-        utilities.printError("This type is unknown!")
+        utilities.print_error("This type is unknown!")
         return None

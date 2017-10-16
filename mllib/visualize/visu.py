@@ -16,12 +16,11 @@ def plot(data):
             c = data.get_y()
             max = float(np.amax(c))
             classes = [float(ele) / max for ele in c]
-            print(classes)
             ax.scatter(x[0], x[1], c=classes, cmap=cm.hsv)
             plt.show()
             data.switch_type(current_type)
         else:
-            utilities.printError('Currently only 2D visualizations are supported!')
+            utilities.print_error('Currently only 2D visualizations are supported!')
     else:
         if data.dim() == 1 and data.dim_for_y() == 1:
             current_type = data.get_type()
@@ -35,5 +34,5 @@ def plot(data):
             plt.show()
             data.switch_type(current_type)
         else:
-            utilities.printError('Currently only 2D visualizations are supported!')
+            utilities.print_error('Currently only 2D visualizations are supported!')
 

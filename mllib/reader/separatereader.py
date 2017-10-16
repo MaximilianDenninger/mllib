@@ -23,5 +23,5 @@ class SeparateReader(object):
         if self._dataReader.num_of_lines() == self._labelReader.num_of_lines():
             return self._dataReader.num_of_lines()
         else:
-            utilities.printError("The number of lines in the data and the label file does not correspond!")
+            utilities.print_error("The number of lines in the data and the label file does not correspond!")
             return 0
