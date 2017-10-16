@@ -1,8 +1,8 @@
 
 # if you have problems getting any Window open try to change the backend of the renderer:
 # on this page a lot of renderer a specified, try some of them out: https://matplotlib.org/faq/usage_faq.html
-import matplotlib
-matplotlib.use('Qt5Agg', force=True)
+#import matplotlib
+#matplotlib.use('Qt5Agg', force=True)
 import matplotlib.pyplot as plt
 
 from matplotlib  import cm
